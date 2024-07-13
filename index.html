@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      button{
+        height: 40px;
+        border-radius: 5px;
+      }
+      .blue{
+        background-image: url(gradechecker.jfif);
+        margin-left: 300px;
+        margin-top: 200px;
+      }
+      .score{
+        border-radius: 5px;
+        height: 40px; 
+        width: 260px;
+      }
+      .showResult{
+        position: absolute;
+        margin-top: 260px;
+        width: 500px;
+        height: 500px;
+        margin-left: 200px;
+        font-size: 30px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      }
+      .inputcard{
+        position: absolute;
+        margin-top: 150px;
+        text-align: center;
+        margin-left: 200px;
+      }
+      </style>
+      </head>
+      <body class="blue">
+      <div class="phone">
+      <div class="inputcard">
+        <input class="score" type="number" placeholder=" input the score.value" id="score">
+        <button onclick="checkScore () ">Check</button>
+      </div>
+      <div class="showResult" id="showResult">Result will show here.</div>   
+      </div>          
+      <script>
+        var song = new Audio('./audio/clap.wav');
+        var one = new Audio('./audio/defend.mp3')
+        var two = new Audio('./audio/No Evidence.mp3')
+        var three = new Audio('./audio/pity.mp3')
+        var four = new Audio('./audio/play.mp3')
+        var five = new Audio('./audio/shout.mp3')
+        var six = new Audio("./audio/clap.wav")
+        console.log(showResult.innerHTML);
+        function checkScore() {
+          console.log(score.value); 
+          if (score.value >= 0 && score.value <= 39) {
+            console.log("F- Fail");
+            showResult.innerHTML = "F-FAIL";
+            one.play()
+          }
+          else if (score.value >= 40 && score.value <= 45) {
+            console.log("E= Pass");
+            showResult.innerHTML = "E-PASS";
+            two.play()
+          } else if (score.value >= 46 && score.value <= 49) {
+            console.log("D- PASS");
+            showResult.innerHTML = "D- PASS";
+            three.play ()
+          } else if (score.value >= 50 && score.value <= 54) {
+            console.log("C-Credit");
+            showResult.innerHTML = "c-credit";
+            four.play()
+          } else if (score.value >= 55 && score.value <= 75) {
+            console.log("G-Good");
+            showResult.innerHTML = "G-Good";
+            five.play()
+          } else if (score.value >= 76 && score.value >= 100) {
+            console.log("Excellent");
+            showResult.innerHTML = "Excellent";
+            six.play()
+          }}
+      </script>
+</body>
+</html>
